@@ -1,6 +1,13 @@
 import React, { Component } from 'react';
 import ListContacts from './ListContacts';
 
+// this.setState({
+//   subject: 'Hello! This is a new subject'
+//  })
+// this.setState((prevState) => ({
+//   count: prevState.count + 1
+//  }))
+
 
 class App extends Component {
   state = {
@@ -8,19 +15,19 @@ class App extends Component {
       {
         id: "karen",
         name: "Karen Isgrigg",
-        handle: "karen_isgrigg",
+        handle: "@karen_isgrigg",
         avatarURL: "http://localhost:5001/karen.jpg"
       },
       {
         id: "richard",
         name: "Richard Kalehoff",
-        handle: "richardkalehoff",
+        handle: "@richardkalehoff",
         avatarURL: "http://localhost:5001/richard.jpg"
       },
       {
         id: "tyler",
         name: "Tyler McGinnis",
-        handle: "tylermcginnis",
+        handle: "@tylermcginnis",
         avatarURL: "http://localhost:5001/tyler.jpg"
       }
     ]
@@ -32,7 +39,7 @@ class App extends Component {
     // })
 
     //functional setState
-    this.setState((currentState)=> ({
+    this.setState((currentState) => ({
         contacts: currentState.contacts.filter(c => {
           return c.id !== contact.id
         })
