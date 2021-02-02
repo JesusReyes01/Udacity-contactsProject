@@ -115,7 +115,7 @@ body, .app {
   margin: 20px 0;
 }
 .showing-contacts button {
-  color: blue;
+  color: rgb(113, 113, 255);
   background: transparent;
   border: none;
   cursor: pointer;

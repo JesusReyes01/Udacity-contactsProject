@@ -16,6 +16,10 @@ class ListContacts extends Component {
             query: query.trim()
         }))
     }
+
+    clearQuery = () => {
+        this.updateQuery('')
+    }
     
     render() {
         const { query } = this.state;
@@ -39,8 +43,9 @@ class ListContacts extends Component {
                 </div>
                 {/* {query !== '' && ( */}
                 {showingContacts.length !== contacts.length && (
-                    <div>
-                        TEST
+                    <div className = 'showing-contacts'>
+                        <span>Now showing {showingContacts.length} of {contacts.length} </span>
+                        <button onClick={this.clearQuery}>Show all</button>
                     </div>
                 )}
 
