@@ -4,6 +4,11 @@ import ImageInput from './ImageInput';
 
 class CreateContact extends Component {
 
+    handleSubmit = (event) => {
+        event.preventDefault()
+        
+    }
+
     render(){
         return(
             <div>
@@ -12,7 +17,7 @@ class CreateContact extends Component {
                     to='/'>
                         Close
                 </Link>
-                <form className='create-contact-form'>
+                <form onSubmit={this.handleSubmit}className='create-contact-form'>
                     <ImageInput
                         className='create-contact-avatar-input'
                         name="avatarURL"
