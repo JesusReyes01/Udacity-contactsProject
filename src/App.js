@@ -15,7 +15,7 @@ import { Route } from 'react-router-dom';
 class App extends Component {
   state = {
     contacts: [],
-    screen: "list",
+    
   }
 
   componentDidMount() {
@@ -28,10 +28,6 @@ class App extends Component {
   }
   
   removeContact = (contact) => {
-    //object setState - used when you are updating state based on the current state
-    // this.setState({contacts:  
-    // })
-
     //functional setState
     this.setState((currentState) => ({
         contacts: currentState.contacts.filter(c => {
@@ -40,7 +36,6 @@ class App extends Component {
     }))
     ContactsAPI.remove(contact)
   }
-  //
 
   render() {
     return (
@@ -49,9 +44,7 @@ class App extends Component {
           <ListContacts 
           contacts={this.state.contacts}
           onDeleteContact={this.removeContact}
-          onNavigate={()=> {
-            this.setState({screen: 'create'})
-          }}/>
+          />
         )}/>
         
         <Route path="/create" component={CreateContact}/>
