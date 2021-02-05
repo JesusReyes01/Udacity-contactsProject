@@ -1,12 +1,15 @@
 import React, {Component} from 'react';
 import { Link } from 'react-router-dom';
 import ImageInput from './ImageInput';
+import serializeForm from 'form-serialize';
 
 class CreateContact extends Component {
 
     handleSubmit = (event) => {
         event.preventDefault()
-        
+        const values = serializeForm(event.target, {hash:
+            true })
+        console.log('values', values)
     }
 
     render(){
